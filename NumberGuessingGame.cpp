@@ -15,7 +15,30 @@ int main ()
 
     int targetNumber = distribution(generator);
 
-    cout << "Generated number: " << targetNumber << endl;
+    int guess;
+    int guessCount = 0;
+
+    do 
+    {
+        cout << "Enter your guess (1-100): ";
+        cin >> guess;
+        guessCount++;
+
+        if (guess > targetNumber)
+        {
+            cout << "Too high, try again." << endl;
+        }
+        else if (guess < targetNumber)
+        {
+            cout << "Too low, try again." << endl;
+        }
+        else 
+        {
+            cout << "Congratulations!" << " You guessed the number in " << guessCount << " attempts." << endl;
+        }
+    }
+    while (guess != targetNumber);
+
 
     return 0;
 }
