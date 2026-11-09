@@ -14,6 +14,7 @@ int main ()
     uniform_int_distribution<int> distribution(minNumber, maxNumber);
 
     int targetNumber = distribution(generator);
+    cout << "TEST ONLY - The secret number is: " << targetNumber << endl; // For testing purposes only
 
     int guess;
     int guessCount = 0;
