@@ -14,7 +14,6 @@ int main ()
     uniform_int_distribution<int> distribution(minNumber, maxNumber);
 
     int targetNumber = distribution(generator);
-    cout << "TEST ONLY - The secret number is: " << targetNumber << endl; // For testing purposes only
 
     int guess;
     int guessCount = 0;
@@ -33,13 +32,17 @@ int main ()
         {
             cout << "Too low, try again." << endl;
         }
-        else 
-        {
-            cout << "Congratulations!" << " You guessed the number in " << guessCount << " attempts." << endl;
-        }
     }
     while (guess != targetNumber);
 
+    if (guessCount == 1)
+    {
+        cout << "Congratulations!" << " You guessed the number in " << guessCount << " attempt." << endl;
+    }
+    else 
+    {
+        cout << "Congratulations!" << " You guessed the number in " << guessCount << " attempts." << endl;
+    }
 
     return 0;
 }
